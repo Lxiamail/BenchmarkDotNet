@@ -193,6 +193,9 @@ namespace BenchmarkDotNet.ConsoleArguments
         [Option("runtimeSrcDir", Required = false, HelpText = "Path to a local copy of dotnet/runtime. . Used by the WASM toolchain when AOTCompilerMode is 'wasm'.")]
         public DirectoryInfo RuntimeSrcDir { get; set; }
 
+        [Option("BenchmarkDotNetSources", Required = false, HelpText = "Path to benchmarkdotnet source root directory when using private drop of benchmarkdotnet")]
+        public DirectoryInfo BenchmarkDotNetSources { get; set; }
+
         internal bool UserProvidedFilters => Filters.Any() || AttributeNames.Any() || AllCategories.Any() || AnyCategories.Any();
 
         [Usage(ApplicationAlias = "")]
